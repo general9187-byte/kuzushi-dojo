@@ -57,6 +57,14 @@ table.rank{border-collapse:collapse;font-size:16px;min-width:240px}
 table.rank td{padding:3px 10px;border-bottom:1px solid #f6ead233;text-align:left}
 table.rank td:last-child{text-align:right;color:var(--gold)}
 </style>
+<style>html,body,button,canvas{touch-action:manipulation}</style>
+<script>
+(function(){var last=0,ok=function(t){return !/^(INPUT|TEXTAREA)$/.test(t.tagName);};
+document.addEventListener('touchend',function(e){var n=Date.now();if(n-last<350&&ok(e.target))e.preventDefault();last=n;},{passive:false});
+['gesturestart','gesturechange','gestureend'].forEach(function(t){document.addEventListener(t,function(e){e.preventDefault();});});
+document.addEventListener('dblclick',function(e){if(ok(e.target))e.preventDefault();});
+document.addEventListener('touchmove',function(e){if(e.touches.length>1)e.preventDefault();},{passive:false});})();
+</script>
 </head>
 <body>
 <canvas id="c"></canvas>
